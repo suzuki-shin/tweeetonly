@@ -2,11 +2,12 @@
 
 from twython import Twython
 import sys
+import os
 from ConfigParser import SafeConfigParser as ConfigParser
 
 # read config
 config = ConfigParser()
-config.read('.tweeetonly')
+config.read(os.path.expanduser('~/.tweeetonly'))
 CONSUMER_KEY        = config.get('tweeetonly', 'consumer_key')
 CONSUMER_SECRET     = config.get('tweeetonly', 'consumer_secret')
 ACCESS_TOKEN        = config.get('tweeetonly', 'access_token')
